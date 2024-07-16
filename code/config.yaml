@@ -1,0 +1,24 @@
+
+data_path:
+
+  data_root: /data
+  project_dir: GRAB_data
+  annot_loc: GRAB_behaviorannotation_SeitaLab
+
+  save_loc: /results/v001
+
+  real_grab: 
+    dirname: pickle_BESTdata
+    version: v005
+
+    csvname: list_GRAB2colors.csv
+
+env_param:
+  
+  sec_per_step: 0.005
+  sensor_fps: 20
+  max_da: 1e5
+  max_ach: 1e5
+
+  mean_real_diff: 0.1749
+  mean_real_fftdiff: 1.1413

@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+set -ex
+
+# This is the master script.
+
+# set up pyenv
+export PYENV_ROOT=$HOME/.pyenv
+export PATH=$PYENV_ROOT/bin:$PATH
+export PATH=$PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
+git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+echo 'eval "$(pyenv init -)"' >> ~/.bashrc
+source ~/.bashrc
+
+pyenv install 3.9.6
+pyenv global 3.9.6
+source ~/.bashrc
+
+cd /code
+pip install -r requirements.txt
+
+# for hps visualization
+python experiment.py
+
+# for hps search for statistics using trial0.csv
+#python experiment.py --setting resources/trial0.csv

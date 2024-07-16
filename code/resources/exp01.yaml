@@ -1,0 +1,20 @@
+hps_config:
+  max_time: 10800
+  num_trials: 100000
+
+  search_space:
+    diff_step: [int, 1, 250]
+    diff_rate: [uniform, 0.01, 0.99]
+
+    d1r_delay: [int, 0, 250]
+    d2r_delay: [int, 0, 250]
+
+    d1r_ach_efficacy: [uniform, 0., 10]
+    d2r_daaxon_efficacy: [uniform, 0., 10]
+    d2r_ach_efficacy: [uniform, 0., 10]
+
+base:
+  da_split_type: random
+  score_type: mix
+  activation_length: 120
+  lambda_: 0.5
